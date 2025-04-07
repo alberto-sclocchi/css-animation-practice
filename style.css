@@ -1,0 +1,62 @@
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    height: 100vh;
+}
+
+body{
+    background-color: black;
+}
+
+.frame{
+    background-color: white;
+    width: 20vw;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    background-color: grey;
+}
+
+.frame2 {
+    transform: translateX(0); /* Middle box stays in place */
+}
+
+/* Initial positions for the side frames */
+.frame1 {
+    transform: translateX(-600px); /* Start off-screen to the right */
+    background-color: red;
+}
+
+.frame4 {
+    transform: translateX(600px); /* Start off-screen to the left */
+    background-color: green;
+}
+
+/* Trigger animations when the section is in view */
+.frame1 {
+    animation: moveInFromRight ease-in forwards;
+    animation-timeline: view(); /* Link animation to scroll */
+    animation-range-start: cover;
+    animation-range-end: 500px;
+
+}
+
+.frame4 {
+    animation: moveInFromRight ease-in forwards;
+    animation-timeline: view(); /* Link animation to scroll */
+    animation-range-start: cover;
+    animation-range-end: 500px;
+}
+
+/* Keyframes for the animations */
+@keyframes moveInFromRight {
+    to {
+        transform: translateX(0);
+    }
+}
