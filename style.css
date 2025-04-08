@@ -90,7 +90,7 @@ body{
     scale: 1;
     animation: fadeOutImg linear;
     animation-timeline: view();
-    animation-range: exit -10vw;
+    animation-range: exit -12vw;
     object-fit: cover;
     z-index: -1;
     position: relative;
